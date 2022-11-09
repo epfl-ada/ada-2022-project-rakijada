@@ -6,3 +6,4 @@
 *.gz
 *.tar
 *.txt
+.ipynb_checkpoints/data_import-checkpoint.ipynb
