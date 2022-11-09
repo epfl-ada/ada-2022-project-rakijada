@@ -1,8 +1,6 @@
 
 .ipynb_checkpoints/Parse Data From txt-checkpoint.ipynb
-*.csv
-*.txt
-*.gz
-*.pkl
-.ipynb_checkpoints/Untitled-checkpoint.ipynb
 .ipynb_checkpoints/data_investigation-checkpoint.ipynb
+*.pkl
+*.csv
+*.gz
