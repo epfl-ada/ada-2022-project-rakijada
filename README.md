@@ -17,7 +17,14 @@ This Github repo presents the project which is a part of the [Applied Data Analy
 
 ## Abstract
 ---
-<br>
+REMINDER: ABSTRACT UP TO 150 WORDS
+
+We could say that nearly everyone agrees that if we drink alcohol we feel better. However, we have to keep in mind that it can be hard to scientifically confirm such expectations, as we can see in [REF TO 1]. 
+
+Our idea is to introduce emotional context into beer reviews. We will use emotional sentiment analysis of users' reviews. We will not cluster the reviews as positive or negative. Instead, we will quantify them with a number that describes emotional intensity (e.g, on a scale from 1-10). This will provide us with a new feature that we will focus on.
+
+Interesting hypothesis we will investigate is if the higher ABV causes people to write more emotional reviews. According to our initial analysis this seems quite likable, since higher ABV is related to higher ratings. 
+
 <br>
 
 ## Research questions
@@ -89,3 +96,11 @@ The deadline for the project is December 23rd. The proposed timeline is summariz
 - Dubravka Kutlesic
 - Lazar Radojevic
 - Luka Radic
+
+
+## References
+[1] Michael A. Sayette (2016)
+*The effects of alcohol on emotion in social drinkers*
+
+[2] Dijkstra, E. W. (1968). 
+Communications of the ACM, 11(3), 147-148.
