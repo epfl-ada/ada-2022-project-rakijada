@@ -1,5 +1,5 @@
 
-# TODO : TITLE
+# How to write and when to put an ad in front of your bar?
 
 This Github repo presents the project which is a part of the [Applied Data Analysis 2022](https://dlab.epfl.ch/teaching/fall2022/cs401/) curriculum at the EPFL. Our team is called **rakijada**.
 
@@ -8,67 +8,77 @@ This Github repo presents the project which is a part of the [Applied Data Analy
 ---
 - [Abstract](#abstract)
 - [Research questions](#research-questions)
-- [Data](#data)
+- [Data and additional datasets](#data)
 - [Methods](#methods)
 - [Feasibility](#feasibility)
 - [Proposed timeline](#proposed-timeline)
 - [Navigating the repo](#navigating-the-repo)
+- [Questions for TAs](#questions-for-tas)
 - [Authors](#authors)
 
 ## Abstract
 ---
 REMINDER: ABSTRACT UP TO 150 WORDS
 
-We could say that nearly everyone agrees that if we drink alcohol we feel better. However, we have to keep in mind that it can be hard to scientifically confirm such expectations, as we can see in [REF TO 1]. 
-
-Our idea is to introduce emotional context into beer reviews. We will use emotional sentiment analysis of users' reviews. We will not cluster the reviews as positive or negative. Instead, we will quantify them with a number that describes emotional intensity (e.g, on a scale from 1-10). This will provide us with a new feature that we will focus on.
-
-Interesting hypothesis we will investigate is if the higher ABV causes people to write more emotional reviews. According to our initial analysis this seems quite likable, since higher ABV is related to higher ratings. 
-
-<br>
+Brewing process can be dated back to at least 2500 BC, so naturally, it has significantly transformed to this day, with its finesses still actively changing. Given the consumer-generated data, we aim to investigate which trends have emerged during the past couple of years and which of these changes were good/bad. This analysis could help breweries answer important questions: Which beer type and when should they focus their production on? Did some beers lose popularity - which aspect could be improved? What is the best period to invest in advertising?
 
 ## Research questions
 ---
-In this project, our goal is to analyze the causality of emotion in user reviews. We will use methods for emotional sentiment analysis of text to extract the emotional value of a review (e.g. using [Evaluative Lexicon](http://www.lexicalsuite.com) or [Hedometer's](https://hedonometer.org/words/labMT-en-v1) happiness score table). These methods will not cluster review as positive or negative. Instead, they will quantify it with a number that describes emotional intensity (e.g., on a scale from 1-10).
-<!-- <br><br>
-Moreover, we are trying to answer the following hypotheses:
-- Is the higher ABV (percentage of alcohol in beer) causing people to write more emotional reviews?
-- Do users write more emotional reviews during weekend as they are able to relax more than during the week?
-- Is there a seasonal trend of emotions during the year as it is the case with rating scores?
-- Can we relate emotion with higher review score?
-- Are users becoming less emotional with time?
-- How do different metrics for a review's emotion impact the conclusions?
-- Can we relate the obtained results to prior scientific findings?  -->
 
-Moreover, we are trying to test the following hypotheses:
-- The higher ABV (percentage of alcohol in beer) causes people to write more emotional reviews.
-- Users write more emotional reviews during the weekend as they can relax more than during the week.
-- There is a seasonal trend of emotions during the year. For example, we expect more emotions during holidays.
-- Strong feelings are correlated with higher review scores.
-- Users become less emotional over time (e.g., as they give more reviews)
+In this project, we aim to analyze user interests and pick trends over the time the beer datasets are collected. More precisely, we wish to answer the following questions:
+- Are the ratings given during cozy winter nights higher on average? Do they have more positive sentiments? ??
+- What are the types of beer prevalent during different seasons? Do those have a particular style? Do they have more alcohol?
+- Are there any local characteristic rating phenomena, such as peaks during weekends and public holidays? Do users then grade better, grade more, or show special sentiment towards specific aspects (taste, smell, aroma, palate, appearance)? Or is there a noticeable global trend over the years?
+- It should be that a single beer is always the same. Are the sentiment trends of aspects of a beer constant over time? 
+- Are the answers to the questions above independent of the country, namely, are the general trends the same per country or state?
 
-Additionally:
-- How do different metrics for a review's emotion impact the conclusions?
-- Can we relate the obtained results to prior scientific findings?
-
-<!-- <br><br><br><br>
-- how is emotion of review related to ABV of beers
-- which reviews are the most emotional (who wrote them, what do they describe)
-- emotional trends during the week or months (e.g. peaks when one gets salary)
-- relation between emotion and ratings (overall, taste, etc)
-- emotion over time (fix a user, test is he more emotional during weekend) -->
-
+These conclusions could help breweries adjust their production according to people’s preferences and improve targeting.
 
 ## Data
 ---
 
+The dataset we will use for the project is beer reviews from BeerAdvocate websites. The number of reviews in the dataset is 8 million. We read txt ratings and reviews, convert them to dataframes and save them to pickle files which we use for later analysis. These pickles have up to 4 GB which is feasible to place in a single dataframe when working on it. We additionally have data about users and breweries, which are small CSV files (up to 30 MB). 
+Additional note : In the initial analysis (_data_investigation.ipynb_) we concluded that reviews in _reviews.txt_ are subset of reviews in _ratings.txt_ and they represent the vast majority of ratings where the textual review is present. Since our analyses us free-form text we continue working with _reviews.txt_.
+
+### Feature extraction
+---
+Notation: aspects are different metrics that user rated, i.e., Taste, Appearance, Aroma and Palate grades.
+We enrich our dataset with aspect-based sentiment scores using Aspect Based sentiment analysis[1]. This model generates the scores for neutral, positive, and negative sentiments towards four aspects. This provides 4 x 3 features for beer review.
+
+The motivation for generating the sentiments: 
+- BeerAdvocate's rule: If a user only provides the overall grade, other aspects are graded equally. (7% of reviews have all grades equal between aspects!) This approximation can be wrong.
+- It helps us understand what aspects are commented more. The positivity/negativity shows that people are not neutral about the aspect!
+- We demonstrated with the examples (in the notebook _data_investigation.ipynb_) that scores for an aspect sometimes differ from the user grade for that aspect because, indeed, the user has a different comment than the grade they gave.
+- It maps free-text review which is hard to work with to numbers which we are interested in.
+
+### Feasibility
+---
+- 4GB of reviews - RAM frinedly!
+The model for aspect based sentiment is powerful, but it is computationally extensive. During observational study (see step 5 in methods) we will generate aspect sentiments for carefully selected users. Therefore, the method is feasable. There exists alternative models (?list them?) with the same objective, so we can use them instead of [1]. 
+
+### Additional datasets
+---
+We will use an additional dataset to determine the dates for [public holidays](https://www.kaggle.com/datasets/donnetew/us-holiday-dates-2004-2021) in the USA. For other countries, we will inspect the public holidays manually.
 
 ## Methods
 ---
 
+**Step 1: Data pre-processing and feature extraction**
+Data cleaning and checking for data inconsistencies are done in the notebook _data_investigation.ipynb_.
+As explained in the [feature extraction](#feature-extraction), we generate aspect based sentiments for textual reviews.
 
-### Feasibility
----
+**Step 2: Execute statistical tests** (e.g., t-test) to conclude are there differences in ratings during particual day, month and seasons for beers of particular style or ABV (level of alcohol).
+
+**Step 3: General temporal analysis using the entire BeerAdvocate dataset** Since we are interested to dig deep into trends, we execute general temporal analysis on the data. The introduction to this analysis is demonstrated in the notebook _data_investigation.ipynb_. We conclude general trends over the days, months and years.
+
+**Step 4: Specific temporal analysis using the entire BeerAdvocate dataset.** Investigate sentiments and ratings statistics during public holidays and weekends and conclude whether they differ to general statistics (by executing statistical tests). 
+
+**Step 5: Observational study.** 
+
+**Step 6: Infer conclusions from the results and answer research questions**
+
+**Step 7: Data story**
+
 
 ## Proposed timeline
 ---
@@ -76,19 +86,37 @@ The deadline for the project is December 23rd. The proposed timeline is summariz
 
 | Period                 | Description               |
 | ---------------------- | ------------------------- |
-| Nov. 21st - Nov 27th | Emotio |
-| Nov. 28st - Dec. 04th   |     Data analysis       |
-| Dec. 5th -  Dec 11th   |   Answering questions and start data story                                     |
-| Dec. 12th -  Dec 18th   | Conclusions for the research question and work on data story          |
-| Dec. 19th -  Dec 23th   |   Final checks and revisions
+| Nov. 14th - Nov 20th | Feature extraction (sentiment of ascpects) (s1) and tests (s3) |
+| Nov. 21st - Nov 27th | General (s3) and specific (s4) temporal analysis |
+| Nov. 28st - Dec. 04th   | Observational study (s5) and start answering questions (s6) |
+| Dec. 5th -  Dec 11th   |   Answering questions (s6) and start data story (s7) |
+| Dec. 12th -  Dec 18th   | Conclusions for the research question and work on data story |
+| Dec. 19th -  Dec 23th   |   Final checks and revisions |
 
 ## Organization within the team
 ---
 
+Our team consists of 4 members : A(leksa), D(ubravka), La(zar), Lu(ka)
+
+| Task                 | Asignee               |
+| ---------------------- | ------------------------- |
+| Feature extraction | A, La |
+| Tests | D |
+| Continue with general temporal analysis | A, Lu |
+| Identify popular styles or alcohol levels over time | Lu |
+| Holidays analysis | D, A |
+| Observational study  | La, A |
+| Data story - appearance | D, La |
+| Data story - text | Lu |
+| Code validation  | A, D, Lu, La |
 
 ## Navigating the repo
 ---
-### list files in repo
+- _data_import.ipynb_ : loading data, converting to pickles
+- _data_investigation.ipynb_ : cleaning, sorting out inconsistencies, initial temporal trends, examples with aspect sentiment scores
+
+## Questions for TAs
+---
 
 ## Authors
 ---
@@ -99,8 +127,6 @@ The deadline for the project is December 23rd. The proposed timeline is summariz
 
 
 ## References
-[1] Michael A. Sayette (2016)
-*The effects of alcohol on emotion in social drinkers*
+[1] [https://github.com/ScalaConsultants/Aspect-Based-Sentiment-Analysis](https://github.com/ScalaConsultants/Aspect-Based-Sentiment-Analysis)
 
-[2] Dijkstra, E. W. (1968). 
-Communications of the ACM, 11(3), 147-148.
+[2] 
