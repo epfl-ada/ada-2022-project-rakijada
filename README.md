@@ -33,7 +33,7 @@ We noticed our data consists of around 55% of reviews whose numeric aspect ratin
 ## Data
 ---
 
-The dataset we will use for the project is beer reviews from BeerAdvocate websites. The number of reviews in the dataset is 8 million. We save ratings in pickles. These pickles have up to 4 GB which is feasible to place in a single dataframe.  
+The dataset we will use consists of beer reviews from the BeerAdvocate website, because the main language is English. The number of reviews in the dataset is 8 million. We save ratings in pickles. These pickles have up to 4 GB which is feasible to place in a single dataframe.  
 Additional note: In the initial analysis (_data_investigation.ipynb_) we concluded that reviews in _reviews.txt_ are a subset of reviews in _ratings.txt_ and represent the vast majority of ratings where the textual review is present. Since our analyses use the free-form text review we focus on _reviews.txt_.
 
 ### Feature extraction
@@ -47,8 +47,7 @@ We enrich our dataset with aspect-based sentiment scores using Aspect Based sent
 
 ### Feasibility
 ---
-- 4GB of reviews - RAM frinedly!
-The model for aspect based sentiment is powerful, but it is time consuming. During observational study (see step 5 in methods) we will generate aspect sentiments for carefully selected pairs and not for all reviews. 
+- 4GB of reviews - RAM-friendly! The model for aspect-based sentiment is powerful, but it is time-consuming. During the observational study (see step 5 in methods), we will generate aspect sentiments for carefully selected pairs and only for some reviews.
 
 ## Methods
 ---
@@ -56,9 +55,9 @@ The model for aspect based sentiment is powerful, but it is time consuming. Duri
 **Step 1: Data cleaning and preprocessing.**
 Data cleaning and checking for inconsistencies are done in the notebook _data_investigation.ipynb_.
 
-**Step 2: General temporal analysis using the entire BeerAdvocate dataset.** Since we are interested in digging deep into trends, we execute a general temporal analysis of the data. The introduction to this analysis is demonstrated in the notebook _data_investigation.ipynb_. We conclude general trends over the days and months.
+**Step 2: Temporal analysis.** Since we are interested in digging deep into trends, we perform a temporal analysis of the data. The introduction to this analysis is demonstrated in the notebook _data_investigation.ipynb_. We conclude general trends over the days and months.
 
-**Step 3: Execute statistical tests.** to confirm that aspect ratings do not statistically differ.
+**Step 3: Conduct statistical tests.** Examine if aspect ratings do not statistically differ.
 
 **Step 4: Indicate the most commented aspects in textual reviews.** Compare distributions of aspect keywords in comments. Compare keyword usage with temporal patterns and investigate similarities and/or differences.
 
@@ -66,7 +65,7 @@ Data cleaning and checking for inconsistencies are done in the notebook _data_in
 
 **Step 6: Feature extraction.** For the reviews present in matching, we generate three sentiments (positive, neutral and negative) for all four aspects as described in [feature extraction](#feature-extraction).
 
-**Step 7: Comparing the text review aspects of better and worse scores.** We will divide our reviews into two periods, one during summer and the other during winter, and accordingly filter both dates to be in the same period. Then, we will examine if there is a difference between the observed text review aspects during those two periods. Using bootstrapping, we will determine if some effects are significantly stronger for one period.
+**Step 7: Comparing the text review aspects of matched reviews.** We will divide our matched reviews into two periods - summer and winter. Then, we will examine if there is a difference between the observed text review aspects during these two periods. Using bootstrapping, we will determine if some effects are significantly stronger for one period.
 
 **Step 8: Infer conclusions from the results and answer the research question.** 
 
@@ -74,7 +73,7 @@ Data cleaning and checking for inconsistencies are done in the notebook _data_in
 
 ## Proposed timeline
 ---
-The deadline is on December 23rd.
+The deadline is December 23rd.
 
 | Period                 | Description               |
 | ---------------------- | ------------------------- |
@@ -112,10 +111,10 @@ Team : A(leksa), D(ubravka), La(zar), Lu(ka)
 
 ## Authors
 ---
-- Aleksa Milisavljevic
-- Dubravka Kutlesic
-- Lazar Radojevic
-- Luka Radic
+- Aleksa Milisavljević
+- Dubravka Kutlešić
+- Lazar Radojević
+- Luka Radić
 
 
 ## References
