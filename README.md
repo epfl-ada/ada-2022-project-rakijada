@@ -86,7 +86,7 @@ The deadline for the project is December 23rd. The proposed timeline is summariz
 
 | Period                 | Description               |
 | ---------------------- | ------------------------- |
-| Nov. 14th - Nov 20th | Feature extraction (sentiment of ascpects) (s1) and tests (s3) |
+| Nov. 14th - Nov 20th | Feature extraction (sentiment of ascpects) (s1) and tests (s2) |
 | Nov. 21st - Nov 27th | General (s3) and specific (s4) temporal analysis |
 | Nov. 28st - Dec. 04th   | Observational study (s5) and start answering questions (s6) |
 | Dec. 5th -  Dec 11th   |   Answering questions (s6) and start data story (s7) |
