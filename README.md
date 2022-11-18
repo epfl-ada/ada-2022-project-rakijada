@@ -46,7 +46,6 @@ Notation: aspects are different metrics that user rated, i.e., Taste, Appearance
 We enrich our dataset with aspect-based sentiment scores using Aspect Based sentiment analysis[1]. This model generates the scores for neutral, positive, and negative sentiments towards four aspects. This provides 4 x 3 features for beer review.
 
 The motivation for generating the sentiments: 
-- BeerAdvocate's rule: If a user only provides the overall grade, other aspects are graded equally. (7% of reviews have all grades equal between aspects!) This approximation can be wrong.
 - It helps us understand what aspects are commented more. The positivity/negativity shows that people are not neutral about the aspect!
 - We demonstrated with the examples (in the notebook _data_investigation.ipynb_) that scores for an aspect sometimes differ from the user grade for that aspect because, indeed, the user has a different comment than the grade they gave.
 - It maps free-text review which is hard to work with to numbers which we are interested in.
@@ -86,7 +85,7 @@ The deadline for the project is December 23rd. The proposed timeline is summariz
 
 | Period                 | Description               |
 | ---------------------- | ------------------------- |
-| Nov. 14th - Nov 20th | Feature extraction (sentiment of ascpects) (s1) and tests (s3) |
+| Nov. 14th - Nov 20th | Feature extraction (sentiment of ascpects) (s1) and tests (s2) |
 | Nov. 21st - Nov 27th | General (s3) and specific (s4) temporal analysis |
 | Nov. 28st - Dec. 04th   | Observational study (s5) and start answering questions (s6) |
 | Dec. 5th -  Dec 11th   |   Answering questions (s6) and start data story (s7) |
