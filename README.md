@@ -59,7 +59,7 @@ Data cleaning and checking for inconsistencies are done in the notebook _data_in
 
 **Step 3: Conduct statistical tests.** Examine if aspect ratings do not statistically differ.
 
-**Step 4: Indicate the most commented aspects in textual reviews.** Compare distributions of aspect keywords in comments. Compare keyword usage with temporal patterns and investigate similarities and/or differences.
+**Step 4: Indicate the most commented aspects in textual reviews.** Compare distributions of aspect names (or their synonyms) in the comments. We extract aspect synonyms (up to five) from the [Thesaurus](https://www.thesaurus.com/) website. Then, we observe if these results match the temporal analysis done in step 2 and investigate similarities and/or differences.
 
 **Step 5: Review matching.** To eliminate subjectivity, we will match reviews of the same user. Additionally, we will match on beer style and ABV to avoid the known effect of alcohol percentage [2]. After, we will declare one beer rating as 'absolutely' better if all aspects are uniformly rated better. 
 
