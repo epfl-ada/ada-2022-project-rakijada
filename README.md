@@ -1,7 +1,8 @@
 
 # How to write and when to put an ad in front of your bar?
 
-This Github repo presents the project which is a part of the [Applied Data Analysis 2022](https://dlab.epfl.ch/teaching/fall2022/cs401/) curriculum at the EPFL. Our team is called **rakijada**.
+Project for : [Applied Data Analysis 2022](https://dlab.epfl.ch/teaching/fall2022/cs401/) at EPFL
+Team : **rakijada**.
 
 
 ## Table of Contents
