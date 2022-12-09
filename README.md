@@ -80,10 +80,10 @@ The deadline is December 23rd.
 | Nov. 7th - Nov. 13th | Cleaning and preprocessing (s1) |
 | Nov. 14th - Nov. 20th | Temporal analysis (s2) |
 | Nov. 21st - Nov. 27th | Tests (s3) and most commented aspects (s4) |
-| Nov. 28st - Dec. 04th   | Start observational study (s5 and s6) |
+| Nov. 28th - Dec. 04th   | Start observational study (s5 and s6) |
 | Dec. 5th -  Dec. 11th   |   Observational study (s7) and Answering questions (s8) |
 | Dec. 12th -  Dec. 18th   | Conclusions for the research question (s8) and work on data story (s9) |
-| Dec. 19th -  Dec. 23th   |   Final checks and revisions |
+| Dec. 19th -  Dec. 23rd   |   Final checks and revisions |
 
 ## Organization within the team
 ---
