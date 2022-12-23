@@ -12,8 +12,8 @@ Team : **rakijada**.
 - [Research questions](#research-questions)
 - [Data](#data)
 - [Methods](#methods)
-- [Proposed timeline](#proposed-timeline)
 - [Navigating the repo](#navigating-the-repo)
+- [Data Story](#data-story)
 - [Authors](#authors)
 - [References](#references)
 
