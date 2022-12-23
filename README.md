@@ -6,6 +6,12 @@ Project for [Applied Data Analysis 2022](https://dlab.epfl.ch/teaching/fall2022/
 Team : **rakijada**.
 
 
+## Data Story
+---
+
+Data story can be found on the link: https://dkutlesic.github.io/duda3/
+
+
 ## Table of Contents
 ---
 - [Abstract](#abstract)
@@ -13,7 +19,6 @@ Team : **rakijada**.
 - [Data](#data)
 - [Methods](#methods)
 - [Navigating the repo](#navigating-the-repo)
-- [Data Story](#data-story)
 - [Authors](#authors)
 - [References](#references)
 
@@ -92,11 +97,6 @@ Team : A(leksa), D(ubravka), La(zar), Lu(ka)
 - _absa_preparation.ipynb_ : running the aspect based sentiment analysis on the selected data
 - _absa_analysis.ipynb_ : interpretation of the results of the aspect based sentiment analysis, relevance of aspects to the textual review and their effect on the rating
 - _styles_investigation.ipynb_ : investigation of the most popular styles and keywords that most frequently appear in them 
-
-## Data Story
----
-
-Data story can be found on the link: https://dkutlesic.github.io/duda3/
 
 ## Authors
 ---
