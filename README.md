@@ -1,4 +1,5 @@
 
+
 # Do we rate as we write?
 
 Project for [Applied Data Analysis 2022](https://dlab.epfl.ch/teaching/fall2022/cs401/) at EPFL <br>
@@ -107,7 +108,14 @@ Team : A(leksa), D(ubravka), La(zar), Lu(ka)
 ---
 - _data_import.ipynb_ : loading data, converting to pickles
 - _data_investigation.ipynb_ : understanding data structure, cleaning, initial trends, inspect co-occurences of the same grades for aspects
-- _data_aspect_analysis.ipynb_ : shows examples and motivation of using aspect based sentiment analysis
+- _absa_preparation.ipynb_ : running the aspect based sentiment analysis on the necessary data
+- _absa_analysis.ipynb_ : interpretation of the results of the aspect based sentiment analysis, relevance of aspects to the textual review and their effect on the rating
+- _styles_investigation.ipynb_ : investigation of most popular styles and keywords that most frequently appear in them 
+
+## Data Story
+---
+
+Data story can be found on the link: https://dkutlesic.github.io/duda3/
 
 ## Authors
 ---
@@ -115,7 +123,6 @@ Team : A(leksa), D(ubravka), La(zar), Lu(ka)
 - Dubravka Kutlešić
 - Lazar Radojević
 - Luka Radić
-
 
 ## References
 [1] [Aspect based sentiment analysis](https://github.com/ScalaConsultants/Aspect-Based-Sentiment-Analysis)
